@@ -37,7 +37,7 @@ if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
 $mname = $row["moviename"];
           echo " <tr>";
-                    echo "<td style='font-size:24px; color:rgb(169,169,169);'>";
+                    echo "<td style='font-size:24px; color:rgb(76, 75, 75);'>";
                     echo "<b>" .$row["moviename"] . "</b>";
                     echo "</td>";
 					

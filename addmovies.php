@@ -13,6 +13,18 @@
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style>
+      
+      .container {
+    background-color: #f9f9f9; /* Light greyish-white */
+    /* padding: 20px; */
+    border-radius: 10px;
+}
+.form-control {
+    background-color: #fff !important; /* Ensures inputs stay white */
+    color: #000 !important; /* Makes text inside inputs black */
+}
+    </style>
 
     <title>Add movie</title>
 	
@@ -80,13 +92,13 @@
      </head>
 
   <body>
-		<div style="background-image: linear-gradient(to right top, #fff9f9, #ffe2e9, #ffcbe5, #ffb5ec, #ffa3fb);">
+		<div>
        <?php include 'admin_navbar.html';  ?>
 
           <div class="container">
           <div class="row">
           <div class="page-header">
-          <h1 style="font-size:48px; font-weight:bold; color:rgb(100,100,155);">Add Movie</h1>
+          <h1 style="font-size:48px; font-weight:bold; color:rgb(100,100,155); padding-left:20px;">Add Movie</h1>
           </div>
           <form class="form-horizontal" role="form" method="post" action="movieSubmit.php" name="addMovieForm" onsubmit="return validateMovieForm();">
            
@@ -131,7 +143,7 @@
               <label for="genre" class="col-sm-2 control-label">Genre:</label>
               <div class="col-sm-6">
               <input type="text" name="genre" class="form-control" id="genre" placeholder="Genre">
-              </div>
+              </div>a
               </div>
                
               <div class="form-group">
@@ -168,7 +180,7 @@
           </div><!-- end for class "container" -->
              <footer>
        
-       <div class="container">
+       <div>
      
   <h4 style="text-align: center; background-color: lightgrey; width: 100%;"> &copy;Studio Ghibli</h4>
        </div>

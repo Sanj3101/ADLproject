@@ -1,118 +1,125 @@
-<?php session_start();
-    include 'connection.php';  
-    include 'navloguser.html';
-    ?>
+<?php 
+session_start();
+include 'connection.php';  
+include 'navloguser.html';
+?>
 <!DOCTYPE html>
 <html>
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="css/rating_style.css">
+    <link rel="stylesheet" type="text/css" href="css/rating_style.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>Details</title>
-	
-    <script type="text/javascript">
-  
-   function change(id)
-   {
-      var cname=document.getElementById(id).className;
-      var ab=document.getElementById(id+"_hidden").value;
-      document.getElementById(cname+"rating").value=ab;
-
-      for(var i=ab;i>=1;i--)
-      {
-         document.getElementById(cname+i).src="images/star2.png";
-      }
-      var id=parseInt(ab)+1;
-      for(var j=id;j<=5;j++)
-      {
-         document.getElementById(cname+j).src="images/star1.png";
-      }
-   }
-
-</script>
-
+    <style>
+        body {
+            background-image: url('images/main2.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .movie-container {
+            background: rgba(29, 45, 38, 0.7); /* Translucent background */
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            width: 60%;
+            margin: 50px auto;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .movie-poster {
+            width: 250px;
+            height: auto;
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+        .movie-details {
+            flex: 1;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+        .movie-title {
+            font-size: 36px;
+            font-weight: bold;
+            color: rgb(255, 200, 150);
+        }
+        .rating-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function change(id) {
+            var cname = document.getElementById(id).className;
+            var ab = document.getElementById(id+"_hidden").value;
+            document.getElementById(cname+"rating").value = ab;
+            for(var i = ab; i >= 1; i--) {
+                document.getElementById(cname + i).src = "images/star2.png";
+            }
+            var id = parseInt(ab) + 1;
+            for(var j = id; j <= 5; j++) {
+                document.getElementById(cname + j).src = "images/star1.png";
+            }
+        }
+    </script>
 </head>
 <body>
-<div style="background-image: url('images/main2.jpg');">
+
 <?php
+$sql = "SELECT * FROM moviedetails";
+$result = mysqli_query($conn, $sql);
+$mid = $_GET["movieid"];
 
-    $sql = "SELECT * FROM moviedetails";
-	$result = mysqli_query($conn, $sql);
-	$mid = $_GET["movieid"];
-	if (mysqli_num_rows($result) > 0) 
-	{
-		echo '<div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8">';
-    while($row = mysqli_fetch_assoc($result)) 
-	{
-		if($row["mid"]==$mid)
-		{	
-			$mname = $row["moviename"];
-			echo "<br><br>";
-			$location1=$row["image"];
-			
-				echo "<br>";
-				print"<p style='float:left;'><img src=\"$location1\" width=\"400\" height=\"650\"\/></p>";
-                echo "<b><p style='font-family:Verdana; font-size:64px; margin-left:7em; color:rgb(47, 27, 21);'>" .$row["moviename"] . "</b>";
-                echo "</p><br><br><p style='font-family:Verdana; font-size:24px; margin-left:18em; color:white;'>";
-				echo "Year of Release:".$row["year"];
-				echo "<br><br>";
-				echo "Language: ".$row["language"];
-				echo "<br><br>";
-				echo  "Duration: ".$row["duration"];
-				echo "<br><br>";
-				echo "Genre:".$row["genre"];
-				echo "<br><br>";
-				echo "Director/s: ".$row["director"];
-				echo "<br><br>";
-				echo "Stars: ".$row["stars"];
-				echo "<br><br></p><p style='font-family:Verdana; font-size:24px; color:white;'>";
-				echo "Summary: ".$row["summary"];
-				$avg = "SELECT avg(rating) as avg from rating where moviename='$mname'";
-				$answer = mysqli_fetch_assoc(mysqli_query($conn,$avg));
-				echo "</p><br><br>";
-				echo "<p style='text-align:center; font-family:Verdana; font-size:24px; color:white;'>Rating: ".round($answer["avg"],2)." <img src=\"images/star.png\" width=\"25\" height=\"30\"\/>" ;
-				echo "";
-				if(isset($_SESSION["username"]))
-				{
-					echo '<form method="post" action="rating.php?id='.$row["moviename"].'&uname='.$_SESSION["username"].'">
-  <div class="ratings">
-	  <input type="hidden" id="php1_hidden" value="1">
-	  <img src="images/star1.png" onmouseover="change(this.id);" id="php1" class="php" width=50px height=50px>
-	  <input type="hidden" id="php2_hidden" value="2">
-	  <img src="images/star1.png" onmouseover="change(this.id);" id="php2" class="php" width=50px height=50px>
-	  <input type="hidden" id="php3_hidden" value="3">
-	  <img src="images/star1.png" onmouseover="change(this.id);" id="php3" class="php" width=50px height=50px>
-	  <input type="hidden" id="php4_hidden" value="4">
-	  <img src="images/star1.png" onmouseover="change(this.id);" id="php4" class="php" width=50px height=50px>
-	  <input type="hidden" id="php5_hidden" value="5">
-	  <img src="images/star1.png" onmouseover="change(this.id);" id="php5" class="php" width=50px height=50px>
-  </div>
-  <input type="hidden" name="phprating" id="phprating" value="0">
-  <input type="submit" value="Submit" name="rate">
-  <br><br><br><br><br>
-</form> ';
-               
-				}
-				else
-				{
-					echo "<br><br>";
-					echo '<a href="login.php" style="color:rgb(47, 27, 21); font-weight:bold;">LOGIN TO RATE</a></p><br><br><br>';
-				}
-			break;
-		}	
-	}
-    echo '</div><div class="col-sm-2"></div></div>';
-	   
+if (mysqli_num_rows($result) > 0) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        if ($row["mid"] == $mid) {
+            $mname = $row["moviename"];
+            $location1 = $row["image"];
+            $avg_query = "SELECT AVG(rating) AS avg FROM rating WHERE moviename='$mname'";
+            $answer = mysqli_fetch_assoc(mysqli_query($conn, $avg_query));
+            ?>
+
+            <div class="movie-container">
+                <img src="<?php echo $location1; ?>" class="movie-poster" alt="Movie Poster">
+                <div class="movie-details">
+                    <p class="movie-title"><?php echo $row["moviename"]; ?></p>
+                    <p><strong>Year of Release:</strong> <?php echo $row["year"]; ?></p>
+                    <p><strong>Language:</strong> <?php echo $row["language"]; ?></p>
+                    <p><strong>Duration:</strong> <?php echo $row["duration"]; ?></p>
+                    <p><strong>Genre:</strong> <?php echo $row["genre"]; ?></p>
+                    <p><strong>Director/s:</strong> <?php echo $row["director"]; ?></p>
+                    <p><strong>Stars:</strong> <?php echo $row["stars"]; ?></p>
+                    <p><strong>Summary:</strong> <?php echo $row["summary"]; ?></p>
+                    <p><strong>Rating:</strong> <?php echo round($answer["avg"], 2); ?> <img src="images/star.png" width="20" height="20"></p>
+                </div>
+            </div>
+
+            <div class="rating-container">
+                <?php if (isset($_SESSION["username"])) { ?>
+                    <form method="post" action="rating.php?id=<?php echo $row["moviename"]; ?>&uname=<?php echo $_SESSION["username"]; ?>">
+                        <div class="ratings">
+                            <?php for ($i = 1; $i <= 5; $i++) { ?>
+                                <input type="hidden" id="php<?php echo $i; ?>_hidden" value="<?php echo $i; ?>">
+                                <img src="images/star1.png" onmouseover="change(this.id);" id="php<?php echo $i; ?>" class="php" width="40px" height="40px">
+                            <?php } ?>
+                        </div>
+                        <input type="hidden" name="phprating" id="phprating" value="0">
+                        <input type="submit" value="Submit" name="rate" class="btn btn-warning">
+                    </form>
+                <?php } else { ?>
+                    <p><a href="login.php" style="color: rgb(255, 200, 150); font-weight: bold;">LOGIN TO RATE</a></p>
+                <?php } ?>
+            </div>
+
+            <?php
+            break;
+        }
+    }
 } else {
-    echo "0 results";
+    echo "<p style='color: white; text-align: center;'>No results found.</p>";
 }
-
 mysqli_close($conn);
-
-
 ?>
-</div>
+
 </body>
 </html>

@@ -1,22 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
-	 
+    <style>
+        /* Navbar Styling */
+        .navbar {
+            background-color: #468c76;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 5px 0;
+        }
+
+        /* Navbar Heading */
+        .navbar h1 {
+            font-size: 36px;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+            color: rgb(47, 27, 21);
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        /* Navbar Links */
+        .nav.navbar-nav {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            padding: 0;
+            margin: 10px 0;
+        }
+
+        .nav.navbar-nav li {
+            display: inline-block;
+        }
+
+        .nav.navbar-nav li a {
+            font-family: "Times New Roman", Times, serif;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: inline-block; /* Important for scaling effect */
+            background: transparent !important;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Hover Effect */
+        .nav.navbar-nav li a:hover {
+            transform: scale(1.1); /* Slight zoom effect */
+        }
+    </style>
 </head>
+
 <body>
-	<nav class="navbar navigation" style="background-color:#468c76; display: flex; flex-direction: column; align-items: center; justify-content: center;"> 
-	<h1 style="font-size:36px; font-family:'Times New Roman', Times, serif; font-weight:bold; color:rgb(47, 27, 21); text-align: center;">Ghibliesque</h1>
-
-	</div> <!-- End of navbar-header -->
-
-	<ul class="nav navbar-nav" style="list-style: none; display: flex; gap: 20px; padding: 0; margin: 10px 0;">
-   	   	 <li><a href="showall_user.php" style="font-family:Times New Roman; color:white; font-size:24px; font-weight:bold;">Show All</a></li>
-   	   	 <li><a href="recommended.php" style="font-family:Times New Roman; color:white; font-size:24px; font-weight:bold;">Recommended</a></li>
-   	   	 <li><a href="toprated_user.php" style="font-family:Times New Roman; color:white; font-size:24px; font-weight:bold;">Top Rated</a></li>
-   	   	 <li><a href="logOut.php" style="font-family:Times New Roman; color:white; font-size:24px; font-weight:bold;">Log out</a></li>
-         
-   	   </div> <!-- End of navbar-nav -->
-   </nav> <!-- End of nav -->
-	
+    <nav class="navbar">
+        <h1>Ghibliesque</h1>
+        <ul class="nav navbar-nav">
+            <li><a href="showall_user.php">Show All</a></li>
+            <li><a href="recommended.php">Recommended</a></li>
+            <li><a href="toprated_user.php">Top Rated</a></li>
+            <li><a href="logOut.php">Log out</a></li>
+        </ul>
+    </nav> 
 </body>
 </html>
