@@ -19,7 +19,7 @@
   <body>
   <?php include 'navbar.html';  ?>
 
-		<div style="background-image: linear-gradient(to right top, #fff9f9, #ffe2e9, #ffcbe5, #ffb5ec, #ffa3fb);">
+		<div>
 
 <div class="container">
   <div class="row">

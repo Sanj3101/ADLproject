@@ -7,6 +7,17 @@
   <head>
    
     <title>Registration</title>
+    <style>
+      .container {
+    background-color: #f9f9f9; /* Light greyish-white */
+    padding: 20px;
+    border-radius: 10px;
+}
+.form-control {
+    background-color: #fff !important; /* Ensures inputs stay white */
+    color: #000 !important; /* Makes text inside inputs black */
+}
+    </style>
 
     <script>
        function validateRegForm(){
@@ -96,7 +107,7 @@
   <body>
   <?php include 'navbar.html';  ?>
 
-  <div style="background-image: linear-gradient(to left top, #ffffff, #fff3fe, #ffe6eb, #ffdec9, #fbdea8);">
+  <div>
 
           <div class="container">
           <div class="row">

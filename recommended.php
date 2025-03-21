@@ -46,7 +46,7 @@ if (mysqli_num_rows($result) > 0)
 					if($row1['mid']!=$row['mid'])
 					{					
 						echo " <tr>";
-						echo "<td style='font-size:24px; color:rgb(169,169,169);'>";
+						echo "<td style='font-size:24px; color:rgb(76, 75, 75);'>";
 						echo "<b>" .$row1["moviename"] . "</b>";
 						echo "</td>";
 					}
