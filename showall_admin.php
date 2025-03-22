@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>ShowAll</title>
     <style>
+        
         .movie-container {
             text-align: center;
             margin-top: 20px;

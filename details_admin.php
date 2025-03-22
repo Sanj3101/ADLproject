@@ -10,6 +10,14 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>Details</title>
     <style>
+         html, body {
+            background-color: #4a8e77; /* Green color - match your header */
+            margin: 0;
+            padding: 0;
+            min-height: 100%;
+
+			background-image: url('images/main2.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;
+        }
         .movie-container {
             background: rgba(29, 45, 38, 0.7); /* Translucent background */
             padding: 20px;
@@ -37,8 +45,7 @@
     </style>
 </head>
 <body>
-<div style="background-image: url('images/main2.jpg');background-size: cover;background-position: center;
-            background-repeat: no-repeat; min-height: 100vh; padding-top: 50px;">
+<div >
 <?php
     $sql = "SELECT * FROM moviedetails";
     $result = mysqli_query($conn, $sql);

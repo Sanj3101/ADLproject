@@ -102,9 +102,10 @@
                                 <option value="5">5</option>
                             </select>
                             <input type="submit" name="rate" value="Rate" class="btn btn-sm">
+                            
                         </form>';
                     } else {
-                        echo '<br><a href="login.php" style="color: red; font-weight: bold;">LOGIN TO RATE</a>';
+                        echo '<br><a href="login.php" style="color: red; font-weight: bold;">LOGIN TO RATE & Review</a>';
                     }
                     
                     echo '</div></div>'; // Closing movie-container

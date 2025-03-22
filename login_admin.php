@@ -13,7 +13,18 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
     <title>Admin Login</title>
-
+    <style>
+		        body {
+            background-image: url('images/main2.jpg');
+            grid-template-rows: 1fr auto; /* Content takes available space, footer sticks */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+	</style>
      </head>
 
   <body>
@@ -21,43 +32,40 @@
 
   <div>
 
-<div class="container">
-  <div class="row">
-  	<div class="page-header">
-  		<h1 style="font-size:48px; font-weight:bold; color:rgb(100,100,155);">Admin Login</h1>
-  	</div>
-  	  <form class="form-horizontal" role="form" method="post" name="logInForm" action="loginVerification_admin.php">
-  	  	 <div class="form-group">
-  	  	    <label for="userName" class="col-sm-2 control-label" >User Name:</label>
-  	  	    <div class="col-sm-6">
-  	  	    	<input type="text" name="userName" class="form-control" id="userName" placeholder="User Name">
-  	  	    </div>
-  	  	 </div>
+  <div>
 
- 		 <div class="form-group">
-  	  	    <label for="password" class="col-sm-2 control-label">Password:</label>
-  	  	    <div class="col-sm-6">
-  	  	      <input type="password" name="password" class="form-control" id="password" placeholder="Password">
-  	  	    </div>
-  	  	</div>
+<div class="container" style="background: rgba(255, 255, 255, 0.46); padding: 20px; border-radius: 10px;">
+    <div class="row">
+        <div class="page-header">
+            <h1 style="font-size:48px; font-weight:bold; color:rgb(24, 24, 47); text-align: left; padding-left:50px">Admin Login</h1>
+        </div>
+        <form class="form-horizontal" role="form" method="post" name="logInForm" action="loginVerification_admin.php">
+            <div class="form-group">
+                <label for="userName" class="col-sm-2 control-label">User Name:</label>
+                <div class="col-sm-6">
+                    <input type="text" name="userName" class="form-control" id="userName" placeholder="User Name">
+                </div>
+            </div>
 
-  	  	<div class="form-group">
-		  <div class="col-sm-offset-2 col-sm-10">
-		       <button type="submit" class="btn btn-primary" id="login">Login</button>
-		  </div>
-		</div>
+            <div class="form-group">
+                <label for="password" class="col-sm-2 control-label">Password:</label>
+                <div class="col-sm-6">
+                    <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+                </div>
+            </div>
 
-  	  </form>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-primary" id="login">Login</button>
+                </div>
+            </div>
+            <img src="images/ghibli_logo.png" height="150" width="auto" alt="" class="logo" align="right">
+        </form>
+    </div>
+
+</div>
+
    </div>
-	
- </div>
-           <footer>
-       
-       <div class="container">
-     
-  <h4 style="text-align: center; background-color: lightgrey; width: 100%;"> &copy; Studio Ghibli</h4>
-       </div>
-   </footer>
    </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
       </body>
