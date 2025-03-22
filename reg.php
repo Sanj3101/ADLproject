@@ -8,6 +8,16 @@
    
     <title>Registration</title>
     <style>
+      body {
+            background-image: url('images/main2.jpg');
+            grid-template-rows: 1fr auto; /* Content takes available space, footer sticks */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
       .container {
     background-color: #f9f9f9; /* Light greyish-white */
     padding: 20px;
@@ -107,88 +117,88 @@
   <body>
   <?php include 'navbar.html';  ?>
 
-  <div>
+  <div >
 
-          <div class="container">
-          <div class="row">
-          <div class="page-header">
-          <h1 style="font-size:48px; font-weight:bold; color:rgb(100,100,155);">Registration Form</h1>
-          </div>
-          <form class="form-horizontal" role="form" method="post" action="submit.php" name="regForm" onsubmit="return validateRegForm();">
-           
-              <div class="form-group">
-              <label for="firstName" class="col-sm-2 control-label">First Name:</label>
-              <div class="col-sm-6">
-              <input type="text" name="firstName" class="form-control" id="firstName" placeholder="First Name">
-              </div>
-              </div>
-           
-              <div class="form-group">
-              <label for="lastName" class="col-sm-2 control-label">Last Name:</label>
-              <div class="col-sm-6">
-              <input type="text" name="lastName" class="form-control" id="lastName" placeholder="Last Name">
-              </div>
-              </div>
-               
-              <div class="form-group">
-              <label for="" class="col-sm-2 control-label">Gender:</label>
-              <div class="col-sm-6">
-              <label class="radio-inline">
-              <input type="radio" name="gender" id="gender1" value="male">Male
-              </label>
-              <label class="radio-inline">
-              <input type="radio" name="gender" id="gender2" value="female">Female
-              </label>
-               
-              </div>
-              </div>
-               
-              <div class="form-group">
-              <label for="dob" class="col-sm-2 control-label">DOB:</label>
-              <div class="col-sm-6">
-              <input type="date" name="dob" class="form-control datepicker" id="dob" placeholder=" Date of Birth">
-              </div>
-              </div>
+    <div class="container" style="background: rgba(255, 255, 255, 0.54); padding: 20px; border-radius: 10px;">
+        <div class="row">
+            <div class="page-header">
+                <h1 style="font-size:48px; font-weight:bold; color:rgb(26, 26, 47); text-align: left; padding-left: 50px">Registration Form</h1>
+            </div>
+            <form class="form-horizontal" role="form" method="post" action="submit.php" name="regForm" onsubmit="return validateRegForm();">
+                
+                <div class="form-group">
+                    <label for="firstName" class="col-sm-2 control-label">First Name:</label>
+                    <div class="col-sm-6">
+                        <input type="text" name="firstName" class="form-control" id="firstName" placeholder="First Name">
+                    </div>
+                </div>
 
-              <div class="form-group">
-              <label for="email" class="col-sm-2 control-label">Email:</label>
-              <div class="col-sm-6">
-              <input type="email" name="email" class="form-control" id="email" placeholder="Email">
-              </div>
-              </div>
-               
-              <div class="form-group">
-              <label for="userName" class="col-sm-2 control-label">User Name:</label>
-              <div class="col-sm-6">
-              <input type="text" name="userName" class="form-control" id="userName" placeholder="User Name">
-              </div>
-              </div>
-               
-              <div class="form-group">
-              <label for="password" class="col-sm-2 control-label">Password:</label>
-              <div class="col-sm-6">
-              <input type="password" name="password" class="form-control" id="password" placeholder="Password">
-              </div>
-              </div>
-               
-              <div class="form-group">
-              <div class="col-sm-offset-2 col-sm-10">
-              <button type="submit" class="btn btn-primary" id="submit">Register</button>
-              </div>
-              </div>
-           
-          </form>
-           
-          </div><!-- end for class "row" -->
-          </div><!-- end for class "container" -->
-             <footer>
-       
-       <div class="container">
-     
-  <h4 style="text-align: center; background-color: lightgrey; width: 100%;"> &copy; Studio Ghibli</h4>
-       </div>
-   </footer>
-	</div>
+                <div class="form-group">
+                    <label for="lastName" class="col-sm-2 control-label">Last Name:</label>
+                    <div class="col-sm-6">
+                        <input type="text" name="lastName" class="form-control" id="lastName" placeholder="Last Name">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="gender" class="col-sm-2 control-label">Gender:</label>
+                    <div class="col-sm-6">
+                        <label class="radio-inline">
+                            <input type="radio" name="gender" id="gender1" value="male">Male
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="gender" id="gender2" value="female">Female
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="dob" class="col-sm-2 control-label">DOB:</label>
+                    <div class="col-sm-6">
+                        <input type="date" name="dob" class="form-control datepicker" id="dob" placeholder="Date of Birth">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="col-sm-2 control-label">Email:</label>
+                    <div class="col-sm-6">
+                        <input type="email" name="email" class="form-control" id="email" placeholder="Email">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="userName" class="col-sm-2 control-label">User Name:</label>
+                    <div class="col-sm-6">
+                        <input type="text" name="userName" class="form-control" id="userName" placeholder="User Name">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="col-sm-2 control-label">Password:</label>
+                    <div class="col-sm-6">
+                        <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-primary" id="submit">Register</button>
+                    </div>
+                </div>
+                <img src="images/ghibli_logo.png" height="250" width="auto" alt="" class="logo" align="right">
+            </form>
+            <h3 style="color:rgb(15, 15, 24); margin-top: 20px; padding-left:50px">Already have an account?  
+        <a href="login.php" style="color:rgb(0, 46, 98); font-size: 20px; font-weight: bold;">Login Here</a>
+    </h3>
+        </div>
+        
+    </div>
+
+    
+
+    
+</div>
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
       </body>
 </html>

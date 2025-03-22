@@ -11,7 +11,7 @@
     <style>
         /* Navbar Styling */
         .navbar {
-            background-color: #468c76;
+            background-color: #468c7674;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -61,18 +61,24 @@
     </style>
 <body>
 
-    <nav class="navbar navigation" style="background-color:#468c76; display: flex; flex-direction: column; align-items: center; justify-content: center;"> 
-        <h1 style="font-size:40px; font-family:'Times New Roman', Times, serif; font-weight:bold; color:rgb(47, 27, 21); text-align: center;">Ghibliesque</h1>
-
-        <ul class="nav navbar-nav" style="list-style: none; display: flex; gap: 15px; padding: 5px 0; margin: 2px 0;">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="showall.php">Show All</a></li>
-            <li><a href="toprated.php">Top Rated</a></li>
-            <li><a href="login.php">Sign In</a></li>
-            <li><a href="login_admin.php">Admin Login</a></li>
-            <li><a href="reg.php">Registration</a></li>
-        </ul>
+    <nav class="navbar navigation" style="background-color:#468c76db; display: flex; align-items: center; justify-content: center; position: relative; padding: 10px;">
+        <div style="text-align: center;">
+            <h1 style="font-size:40px; font-family:'Times New Roman', Times, serif; font-weight:bold; color:rgb(47, 27, 21);">Ghibliesque</h1>
+    
+            <ul class="nav navbar-nav" style="list-style: none; display: flex; gap: 15px; padding: 5px 0; margin: 2px 0; justify-content: center;">
+                <li><a href="index.php">Home</a></li>
+                <li><a href="showall.php">Show All</a></li>
+                <li><a href="toprated.php">Top Rated</a></li>
+                <li><a href="login.php">Sign In</a></li>
+                <li><a href="login_admin.php">Admin Login</a></li>
+                <li><a href="reg.php">Registration</a></li>
+            </ul>
+        </div>
+    
+        <img src="images/logotrans.png" alt="" class="logo" height="100px" width="auto" style="position: absolute; right: 20px;">
     </nav>
+    
+    
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 

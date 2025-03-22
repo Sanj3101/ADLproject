@@ -24,7 +24,7 @@
     </style>
 </head>
 <body>
-<div style="background-image: url('images/main2.jpg');">
+<div style="background-image: url('images/main2.jpg');background-size:cover;">
 
    <?php
 
